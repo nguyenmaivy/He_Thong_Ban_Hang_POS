@@ -1,0 +1,274 @@
+.container {
+    min-height: 100vh;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.main {
+    max-width: 400px;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* nút quay lại */
+.main .backButtonContainer .backButtonCircle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    border: 2px solid #000;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+.main .backButtonContainer .backButtonCircle:hover {
+    background-color: #eaf2ff;
+    border-color: #007bff;
+    cursor: pointer;
+}
+
+.main .backButtonContainer .backButton {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* title */
+.title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* thông tin đơn hàng */
+.main .section_info_order {
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.section_info_order .sectionTitle {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.section_info_order .orderDetailsItem {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #000;
+    padding-top: 5px;
+}
+
+.section_info_order .orderDetailsItem .note {
+    font-size: 12px;
+    color: gray;
+    margin-top: 5px;
+}
+
+.section_info_order .orderDetailsTotal {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #000;
+}
+
+/* phương thức thanh toán */
+.section_pay {
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.section_pay .phuongThuc {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #000;
+    /* display: flex; 
+  justify-content: space-between; */
+}
+
+.section_pay .phuongThuc:nth-child(2) {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #000;
+    margin-top: 5px;
+}
+
+.section_pay .phuongThuc input {
+    display: none;
+}
+
+.section_pay .phuongThuc span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.paymentContent {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.icon {
+    font-size: 18px !important;
+    vertical-align: middle;
+    margin-bottom: 7px;
+}
+
+.section_pay .phuongThuc.active {
+    border-color: #007bff;
+    background: #eaf2ff;
+}
+
+.phuongThuc.disabled {
+    opacity: 0.5;
+}
+
+/* thông tin thẻ nếu chọn thẻ tín dụng */
+.main .cardDetails {
+    transform: translateY(0);
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.cardDetails.hide {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+}
+
+.cardDetails .input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.cardDetails .row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.cardDetails .row .inputSmall {
+    width: 50%;
+    padding: 10px;
+    border: 1.6px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.cardDetails .input::placeholder,
+.cardDetails .row .inputSmall::placeholder {
+    font-size: 13px;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* nút thanh toán */
+.main .payButton {
+    width: 100%;
+    background: #28a745;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.main .payButton:hover {
+    background: #218838;
+}
+
+/* hủy thanh toán */
+.cancelButton {
+    width: 100%;
+    background: #ddd;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.cancelButton:hover {
+    background: #bbb;
+}
+
+/* Thêm vào cuối file payment.css */
+.paymentOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.paymentModal {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
