@@ -1,0 +1,115 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-2xl">
+        <div class="flex justify-between items-center border-b pb-4 mb-4">
+            <h2 class="text-lg font-semibold">ADD TO CART</h2>
+            <button class="text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="flex">
+            <img src="https://placehold.co/100x100"
+                alt="Image of a hamburger with lettuce, tomato, and cheese in a sesame seed bun"
+                class="w-24 h-24 object-cover rounded-lg">
+            <div class="ml-4 flex-1">
+                <!-- Phần 1 -->
+                <div class="grid grid-cols-3 gap-4 mb-4">
+                    <div>
+                        <div class="text-sm text-gray-500">SKU</div>
+                        <div class="text-lg font-semibold">401</div>
+                    </div>
+                    <div>
+                        <div class="text-lg font-semibold">Hamburger</div>
+                        <div class="text-sm text-gray-500">Burger</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-sm text-gray-500">Unit Price</div>
+                        <div class="text-lg font-semibold text-red-500">kr 123,00</div>
+                    </div>
+                </div>
+                <!-- Phần 2 -->
+                <div class="flex justify-between items-center mb-4">
+                    <div class="text-sm font-semibold">Quantity</div>
+                    <div class="flex items-center">
+                        <button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-l">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <input type="text" value="1" class="w-12 text-center border-t border-b border-gray-200">
+                        <button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-r">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Phần 3 -->
+                <div class="text-sm text-gray-500 mb-2">
+                    <div class="flex justify-between">
+                        <span>Protein :</span>
+                        <span>What is Lorem ipsum?</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Additives:</span>
+                        <span>03</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Baking material :</span>
+                        <span>040</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Food decoration:</span>
+                        <span>04</span>
+                    </div>
+                </div>
+                <!-- Phần 4 -->
+                <div class="mb-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="text-sm font-semibold">Side dishes (<span class="text-red-500">*</span>)</div>
+                        <div class="text-sm text-gray-500">Selected quantity 0</div>
+                    </div>
+                    <div class="text-sm text-gray-500 mb-2">Please select one of the properties below</div>
+                    <div class="flex items-center mb-4">
+                        <input type="checkbox" id="vegetables" class="mr-2" checked>
+                        <label for="vegetables" class="text-sm">Vegetables</label>
+                    </div>
+                </div>
+                <!-- Phần 5 -->
+                <div class="flex justify-end">
+                    <button class="bg-red-500 text-white px-4 py-2 rounded-lg flex items-center">
+                        <i class="fas fa-shopping-cart mr-2"></i>
+                        Kr 123,00
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- /* Protein: What is Lorem ipsum? Additives: 03 Baking material: 040 Food decoration: 04 */
+
+position: absolute;
+width: 290px;
+height: 210px;
+left: 293px;
+top: 330px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 42px;
+/* or 210% */
+letter-spacing: -0.01em;
+
+color: #000000;
+
+ -->
