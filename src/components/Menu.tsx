@@ -97,7 +97,7 @@ const Menu: React.FC = () => {
     const handlePaymentClose = () => {
         setShowPayment(false);
     };
-
+    // Tính tổng và thuế
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const tax = total * 0.1; // 10% VAT
     const totalWithTax = total + tax;

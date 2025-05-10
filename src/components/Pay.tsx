@@ -110,7 +110,7 @@ const Pay: React.FC<PayProps> = ({
     setTimeout(() => {
       alert("Thanh toán thành công!");
       onClose();
-      router.push("/");
+      router.push("/menu");
     }, 1000);
   };
 
