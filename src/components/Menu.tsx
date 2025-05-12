@@ -110,7 +110,10 @@ const Menu: React.FC = () => {
         <div className={styles.container}>
             <div className={styles.lefSection}>
                 <div className={styles.header}>
-                    <button className={styles.backButton}>
+                    <button
+                        className={styles.backButton}
+                        onClick={() => window.location.reload()}
+                    >
                         <FaHome className="text-x1" />
                         <span className="ml-2 text-lg font-semibold">Back to home</span>
                     </button>

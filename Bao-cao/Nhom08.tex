@@ -4,8 +4,12 @@
 \setlength{\parindent}{0pt}
 \usepackage{graphicx} 
 \usepackage{tabularx}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
 \usepackage{tocloft}
 \usepackage{xcolor}
+\usepackage{colortbl} % Required for \arrayrulecolor
 \usepackage{tikz} 
 \usepackage{scrextend}
 \usepackage{makecell}
@@ -149,6 +153,9 @@
 
 \section*{\centering PHÂN CÔNG CÔNG VIỆC}
 \noindent\makebox[\textwidth]{
+    \renewcommand{\arraystretch}{1.5} % Tăng khoảng cách giữa các dòng
+    \setlength{\arrayrulewidth}{0.5mm} % Độ dày của đường kẻ
+    \setlength{\tabcolsep}{5pt} % Khoảng cách giữa các cột
     \begin{tabular}{|>{\centering\arraybackslash}c|
         >{\centering\arraybackslash}p{5.5cm}|
         >{\centering\arraybackslash}p{1.5cm}|
@@ -164,11 +171,11 @@
         \hline
         3122410204            & Lê Nhật Lam           & 16\%                     & Viết nội dung báo cáo, vẽ sơ đồ (sequence đặt món ăn, activity), vẽ figma, làm bài tập nhóm (Assignment, Lab-w8)                     \\
         \hline
-        3122410490            & Nguyễn Hoàng Mai Vy   & 20\%                     & Code giao diện menu, code báo cáo, vẽ sơ đồ usecase tổng quan hệ thống, viết nội dung báo cáo, làm bài tập nhóm (Assignment, Lab-w8) \\
+        3122410490            & Nguyễn Hoàng Mai Vy   & 20\%                     & Code giao diện menu, code báo cáo, vẽ sơ đồ usecase tổng quan hệ thống, viết nội dung báo cáo, làm bài tập nhóm (Assignment, Lab-w8), test case phần login và đăng ký, phân công công việc \\
         \hline
         3123560009            & Võ Lê Vũ Duy          & 16\%                     & Viết nội dung báo cáo, vẽ sơ đồ (sequence thanh toán, class diagram), làm bài tập nhóm (Assignment, Lab-w8)                          \\
         \hline
-        3121410428            & Võ Văn Sơn            & 13\%                     & Viết nội dung báo cáo, vẽ sơ đồ (sequence đơn hàng, deployment diagram), làm bài tập nhóm (Assignment, Lab-w8)                       \\
+        3121410428            & Võ Văn Sơn            & 13\%                     & Viết nội dung báo cáo, vẽ sơ đồ (sequence đơn hàng), làm bài tập nhóm (Assignment, Lab-w8)                       \\
         \hline
     \end{tabular}
 }
@@ -281,6 +288,9 @@
 \begin{table}[H]
     \small
     \centering
+    \renewcommand{\arraystretch}{1.5} % Tăng khoảng cách giữa các dòng
+    \setlength{\arrayrulewidth}{0.5mm} % Độ dày của đường kẻ
+    \setlength{\tabcolsep}{5pt} % Khoảng cách giữa các cột
     \begin{tabularx}{\textwidth}{|l|X|}
         \hline
         \textbf{Use case}             & Đặt món ăn                                                                                                                               \\
@@ -323,6 +333,9 @@
 \begin{table}[H]
     \small
     \centering
+    \renewcommand{\arraystretch}{1.5} % Tăng khoảng cách giữa các dòng
+    \setlength{\arrayrulewidth}{0.5mm} % Độ dày của đường kẻ
+    \setlength{\tabcolsep}{5pt} % Khoảng cách giữa các cột
     \begin{tabularx}{\textwidth}{|l|X|}
         \hline
         \textbf{Use case}             & Thanh toán đơn hàng                                                                                               \\
@@ -356,7 +369,7 @@
     \end{tabularx}
 
     \caption{Đặc tả use case thanh toán đơn hàng.}
-    \label{fig:usecase-themmon}
+    \label{fig:usecase-thanh-toan}
 \end{table}
 
 
@@ -371,6 +384,9 @@
 \begin{table}[H]
     \small
     \centering
+    \renewcommand{\arraystretch}{1.5} % Tăng khoảng cách giữa các dòng
+    \setlength{\arrayrulewidth}{0.5mm} % Độ dày của đường kẻ
+    \setlength{\tabcolsep}{5pt} % Khoảng cách giữa các cột
     \begin{tabularx}{\textwidth}{|l|X|}
         \hline
         \textbf{Use case}             & Xử lý đơn hàng                                                                     \\
@@ -404,7 +420,7 @@
     \end{tabularx}
 
     \caption{Đặc tả use case xử lý đơn hàng.}
-    \label{tab:usecase-themmon}
+    \label{tab:usecase-don-hang}
 \end{table}
 
 
@@ -462,6 +478,9 @@
           \begin{table}[H]
               \small
               \centering
+              \renewcommand{\arraystretch}{1.5} % Tăng khoảng cách giữa các dòng
+                \setlength{\arrayrulewidth}{0.5mm} % Độ dày của đường kẻ
+                 \setlength{\tabcolsep}{5pt} % Khoảng cách giữa các cột
               \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{5cm}|X|}
                   \hline
                   \textbf{Lớp}                                       & \textbf{Mô tả}                                                                                                                                    \\
@@ -592,8 +611,173 @@
     [index.ts]]
     ]
 \end{forest}
-
-
+\section{Kiểm thử}
+\subsection{Test design}
+\begin{itemize}
+    \item Chọn 2 module chính để kiểm thử là Đăng nhập và Đăng ký.
+\end{itemize}
+\begin{center}
+    \renewcommand{\arraystretch}{1.5} % Tăng khoảng cách giữa các dòng
+    \setlength{\arrayrulewidth}{0.5mm} % Độ dày của đường kẻ
+    \setlength{\tabcolsep}{5pt} % Khoảng cách giữa các cột
+    \begin{longtable}{|>{\centering\arraybackslash}m{4cm}|
+        >{\centering\arraybackslash}m{4cm}|
+        >{\raggedright\arraybackslash}m{7.5cm}|}
+        \hline
+        \textbf{Các module và chức năng} & \textbf{TR\#} & \textbf{Description} \\
+        \hline
+        \multirow{6}{=}{\centering Đăng nhập} 
+        & T1 & Email đăng nhập không để trống. \\
+        \cline{2-3}
+        & T2 & Mật khẩu không được để trống. \\
+        \cline{2-3}
+        & T3 & Nếu Email và mật khẩu đúng thì đăng nhập vào hệ thống. \\
+        \cline{2-3}
+        & T4 & Nếu Email đúng – mật khẩu sai thì thông báo lỗi. \\
+        \cline{2-3}
+        & T5 & Nếu Email sai thì thông báo tài~khoản không tồn tại. \\
+        \cline{2-3}
+        & T6 & Nếu người dùng nhấn biểu tượng hiển password bên phải ô đăng nhập thì sẽ hiển password. \\
+        \hline
+        \multirow{5}{=}{\centering Đăng ký ngay} 
+        & T7 & Email đăng nhập không để trống. \\
+        \cline{2-3}
+        & T8 & Mật khẩu không được để trống. \\
+        \cline{2-3} 
+        & T9 & Xác nhận mật khẩu không được để trống. \\
+        \cline{2-3} 
+        & T10 & Nếu Email và mật khẩu đúng thì đăng nhập vào hệ thống. \\
+        \cline{2-3}
+        & T11 & Nếu Email đúng – mật khẩu và xác nhận mật khẩu không trùng khớp thì thông báo lỗi. \\
+        \hline
+    \end{longtable}
+\end{center}
+\newpage
+\subsection{Test case}
+    \renewcommand{\arraystretch}{1.5} % Tăng khoảng cách giữa các dòng
+    \setlength{\arrayrulewidth}{0.5mm} % Độ dày của đường kẻ
+    \setlength{\tabcolsep}{5pt} % Khoảng cách giữa các cột
+    \begin{longtable}{|
+    >{\centering\arraybackslash}p{1cm}|
+    >{\centering\arraybackslash}p{2cm}|
+    >{\raggedright\arraybackslash}p{2.5cm}|
+    >{\centering\arraybackslash}p{4cm}|
+    >{\centering\arraybackslash}p{2cm}|
+    >{\centering\arraybackslash}p{1.5cm}|
+    >{\centering\arraybackslash}p{1.3cm}|}
+        \hline
+        \rowcolor{pink!30} 
+        \textbf{Test case ID} & \textbf{Test case} & \centering\textbf{Test steps} & \textbf{Test data} & \textbf{Expected result} & \textbf{Actual result} & \textbf{Pass/ Failed} \\
+        \hline
+        T1 & Kiểm tra phản hồi của chương trình nếu để trống Email & 
+        1) Vào trang đăng nhập \newline
+        2) Nhập dữ liệu vào ô mật khẩu \newline
+        3) Nhấn nút đăng nhập & 
+        Mk:123456 & 
+        Hiển thị thông báo Email không để trống & 
+        Hiển thị thông báo Email không để trống & 
+        Pass \\
+        \hline
+        T2 & Kiểm tra phản hồi của chương trình nếu mật khẩu để trống & 
+        1) Vào trang đăng nhập \newline
+        2) Nhập dữ liệu vào ô Email \newline
+        3) Ấn nút đăng nhập & 
+        Tk:abc@gmail.com & 
+        Hiển thị thông báo mật khẩu không được để trống & 
+        Hiển thị thông báo lỗi mật khẩu & 
+        Pass \\
+        \hline
+        T3 & Kiểm tra phản hồi của chương trình nếu Email và mật khẩu đúng thì đăng nhập vào ứng dụng & 
+        1) Vào trang đăng nhập \newline
+        2) Nhập Email và mật khẩu \newline
+        3) Ấn nút đăng nhập & 
+        Tk:abc@gmail.com \newline
+        Mk:123456 & 
+        Hiển thị thông báo đăng nhập thành công & 
+        Hiển thị thông báo đăng nhập thành công & 
+        Pass \\
+        \hline
+        T4 & Kiểm tra phản hồi của chương trình nếu Email đúng – mật khẩu sai & 
+        1) Vào trang đăng nhập \newline
+        2) Nhập Email và mật khẩu \newline
+        3) Ấn nút đăng nhập & 
+        Tk:abc@gmail.com \newline
+        Mk:123 \newline
+        Mk đúng:123456 & 
+        Hiển thị thông báo mật khẩu sai & 
+        Hiển thị thông báo mật khẩu sai & 
+        Pass \\
+        \hline
+        T5 & Kiểm tra phản hồi của chương trình nếu Email thì thông báo tài khoản không tồn tại & 
+        1) Vào trang đăng nhập \newline
+        2) Nhập Email và mật khẩu \newline
+        3) Ấn nút đăng nhập & 
+        Tk:abc \newline & 
+        Hiển thị thông báo mật khẩu sai & 
+        Hiển thị thông báo mật khẩu sai & 
+        Pass \\
+        \hline
+        T6 & Kiểm tra phản hồi của chương trình nếu nhấn biểu tượng hiện password & 
+        1) Vào trang đăng nhập \newline
+        2) Nhập dữ liệu vào ô mật khẩu \newline
+        3) Nhấn nút hiện password & 
+        Mk đúng:123456 & 
+        Hiện password vừa nhập & 
+        Hiện password vừa nhập & 
+        Pass \\
+        \hline
+        T7 & Kiểm tra phản hồi của chương trình nếu để trống Email & 
+        1) Vào trang đăng ký \newline
+        2) Nhập dữ liệu vào ô mật khẩu \newline
+        3) Nhấn nút đăng ký & 
+        Mk:123456 & 
+        Hiện thị thông báo Email không để trống & 
+        Hiển thị thông báo Email không để trống & 
+        Pass \\
+        \hline
+        T8 & Kiểm tra phản hồi của chương trình nếu mật khẩu để trống & 
+        1) Vào trang đăng ký \newline
+        2) Nhập dữ liệu vào ô mật khẩu \newline
+        3) Nhấn nút đăng ký & 
+        Tk:abc@gmail.com \newline
+        Xnmk: 123456 & 
+        Hiển thị thông báo mật khẩu không để trống & 
+        Hiện thị thông báo lỗi mật khẩu & 
+        Pass \\
+        \hline
+        T9 & Kiểm tra phản hồi của chương trình nếu xác nhận mật khẩu để trống & 
+        1) Vào trang đăng ký \newline
+        2) Nhập dữ liệu vào ô mật khẩu \newline
+        3) Nhấn nút đăng ký & 
+        Tk:abc@gmail.com \newline
+        Mk:123456 & 
+        Hiển thị thông báo xác nhận mật khẩu không để trống & 
+        Hiện thị thông báo lỗi xác nhận mật khẩu & 
+        Pass \\
+        \hline
+        T10 & Kiểm tra phản hồi của chương trình nếu Email và mật khẩu đúng thì đăng nhập vào hệ thống & 
+        1) Vào trang đăng ký \newline
+        2) Nhập Email, mật khẩu và xác nhận mật khẩu \newline
+        3) Ấn nút đăng ký & 
+        Tk:abc@gmail.com \newline
+        Mk:123456 \newline
+        Xnmk:123456 & 
+        Hiển thị thông báo đăng ký thành công & 
+        Hiển thị thông báo đăng ký thành công & 
+        Pass \\
+        \hline
+        T11 & Kiểm tra phản hồi của chương trình nếu mật khẩu và xác nhận mật khẩu không trùng khớp & 
+        1) Vào trang đăng ký \newline
+        2) Nhập dữ liệu vào ô mật khẩu \newline
+        3) Nhấn nút đăng ký & 
+        Tk:abc@gmail.com \newline
+        Mk đúng:123456 \newline
+        Xnmk sai:123  & 
+        Hiện thị thông báo mật khẩu xác nhận không khớp  & 
+        Hiện thị thông báo mật khẩu xác nhận không khớp  & 
+        Pass \\
+        \hline
+    \end{longtable}
 \section{Triển khai - Sprint 2}
 \subsection{Giao diện}
 \subsubsection{Giao diện đăng nhập}
@@ -779,4 +963,5 @@
     \item Ứng dụng AI vào gợi ý món ăn: Đề xuất món dựa trên lịch sử đặt món và thời gian trong ngày.
     \item Hỗ trợ thanh toán QR Pay trực tiếp tại bàn: Khách không cần đợi nhân viên, tự thanh toán đơn qua mã QR hóa đơn.
 \end{itemize}
+
 \end{document}
